@@ -199,7 +199,8 @@ def scoreboard
 
         end
         team = location.to_s.capitalize + " " + team_info[:team_name]
-          puts team + home_points
+          puts team  
+          puts home_points
     end
 
 #      points = points.reduce(:+)
