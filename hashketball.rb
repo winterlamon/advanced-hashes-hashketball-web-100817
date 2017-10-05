@@ -196,7 +196,7 @@ def scoreboard
             away_points << team_info[:players][name][:points]
           end
           team = location.to_s.capitalize + " " + team_info[:team_name]
-          binding.pry
+          
         end
     end
 
