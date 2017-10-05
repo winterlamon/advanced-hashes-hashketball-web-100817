@@ -183,3 +183,14 @@ def long_name_steals_a_ton?
   end
 
 end
+
+
+def scoreboard
+
+end
+
+
+=begin
+"Home" [:team_name] total_points
+"Away: TIMBERWOLVES 121"
+=end
