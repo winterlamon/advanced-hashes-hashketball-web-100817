@@ -203,9 +203,7 @@ def scoreboard
             away_points << team_info[:players][name][:points]
           end
         end
-
     end
     puts home_team + " " + home_points.reduce(:+).to_s
     puts away_team + " " + away_points.reduce(:+).to_s
 end
-
