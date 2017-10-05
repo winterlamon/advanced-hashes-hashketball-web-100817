@@ -203,7 +203,7 @@ def scoreboard
       home_points = home_points.reduce(:+)
       away_points = away_points.reduce(:+)
 
-      puts 
+      puts
 end
 
 =begin
