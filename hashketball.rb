@@ -189,7 +189,7 @@ def scoreboard
   winning_team
 binding.pry
 end
-
+Pry.start
 
 =begin
 "Home" [:team_name] total_points
