@@ -188,7 +188,8 @@ end
 def scoreboard
   home_points = []
   away_points = []
-  team= ""
+  hometeam= ""
+  awayteam= ""
     game_hash.collect do |location, team_info|
       team_info[:players].collect do |name, stats|
           if location == :home
