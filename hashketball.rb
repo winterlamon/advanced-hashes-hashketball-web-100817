@@ -201,6 +201,7 @@ def scoreboard
           puts team
         end
         puts home_points.reduce(:+)
+        puts away_points.reduce(:+)
     end
 
 #      points = points.reduce(:+)
