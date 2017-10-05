@@ -101,3 +101,85 @@ def big_shoe_rebounds
     end
   end
 end
+
+# == BONUS == #
+
+def most_points_scored
+  points = []
+  top_scorer = ""
+  game_hash.collect do |location, team_info|
+    team_info[:players].collect do |name, stats|
+      points << stats[:points]
+      if stats[:points] == points.sort[-1]
+        top_scorer = name
+      end
+    end
+  end
+  return top_scorer
+end
+
+
+def winning_team
+home_points = []
+away_points = []
+  game_hash.collect do |location, team_info|
+    team_info[:players].collect do |name, stats|
+        if location == :home
+          home_points << team_info[:players][name][:points]
+        else location == :away
+          away_points << team_info[:players][name][:points]
+        end
+      end
+  end
+
+    home_points = home_points.reduce(:+)
+    away_points = away_points.reduce(:+)
+
+      if home_points > away_points
+        return game_hash[:home][:team_name]
+      else away_points > home_points
+        return game_hash[:away][:team_name]
+      end
+end
+
+
+def player_with_longest_name
+  name_length = 0
+  longest_name = ""
+  game_hash.collect do |location, team_info|
+    team_info[:players].collect do |name, stats|
+      if name.length > name_length
+        longest_name = name
+      end
+    end
+  end
+  return longest_name
+end
+
+# == SUPER BONUS == #
+
+def long_name_steals_a_ton?
+  name_length = 0
+  longest_name = ""
+  steals = []
+  top_stealer = ""
+
+  game_hash.collect do |location, team_info|
+    team_info[:players].collect do |name, stats|
+      steals << stats[:steals]
+      if stats[:steals] == steals.sort[-1]
+        top_stealer = name
+      end
+      if name.length > name_length
+        longest_name = name
+      end
+    end
+  end
+
+  if longest_name == top_stealer
+    true
+  else
+    false
+  end
+
+end
