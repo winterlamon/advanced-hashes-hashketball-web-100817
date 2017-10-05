@@ -183,3 +183,27 @@ def long_name_steals_a_ton?
   end
 
 end
+
+
+def scoreboard
+  home_points = []
+  away_points = []
+  home_team = ""
+  away_team = ""
+    game_hash.collect do |location, team_info|
+      if location == :home
+        home_team = location.to_s.capitalize + " " + team_info[:team_name]
+      else
+        away_team = location.to_s.capitalize + " " + team_info[:team_name]
+      end
+      team_info[:players].collect do |name, stats|
+          if location == :home
+            home_points << team_info[:players][name][:points]
+          else location == :away
+            away_points << team_info[:players][name][:points]
+          end
+        end
+    end
+    puts home_team + " " + home_points.reduce(:+).to_s
+    puts away_team + " " + away_points.reduce(:+).to_s
+end
