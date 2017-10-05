@@ -198,7 +198,7 @@ def scoreboard
           end
 
         end
-        team = location.to_s.capitalize + " " + team_info[:team_name
+        team = location.to_s.capitalize + " " + team_info[:team_name]
           puts team + home_points
     end
 
