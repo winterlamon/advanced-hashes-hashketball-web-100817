@@ -205,7 +205,7 @@ def scoreboard
 
       puts
 end
-
+scoreboard
 =begin
 "Home" [:team_name] total_points
 "Away: TIMBERWOLVES 121"
