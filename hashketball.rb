@@ -195,7 +195,7 @@ def scoreboard
           else location == :away
             away_points << team_info[:players][name][:points]
           end
-          team = location.to_s + team_info[:team_name]
+          team = location.to_s.capitalize + " " + team_info[:team_name]
           binding.pry
         end
     end
@@ -203,7 +203,7 @@ def scoreboard
       home_points = home_points.reduce(:+)
       away_points = away_points.reduce(:+)
 
-      puts
+      puts team + home_points
 end
 scoreboard
 =begin
