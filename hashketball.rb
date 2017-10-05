@@ -186,10 +186,25 @@ end
 
 
 def scoreboard
-  winning_team
-binding.pry
+  home_points = []
+  away_points = []
+    game_hash.collect do |location, team_info|
+      team_info[:players].collect do |name, stats|
+          if location == :home
+            home_points << team_info[:players][name][:points]
+          else location == :away
+            away_points << team_info[:players][name][:points]
+          end
+          team = location.to_s + team_info[:team_name]
+          binding.pry
+        end
+    end
+
+      home_points = home_points.reduce(:+)
+      away_points = away_points.reduce(:+)
+
+      puts 
 end
-Pry.start
 
 =begin
 "Home" [:team_name] total_points
