@@ -187,7 +187,7 @@ end
 
 def scoreboard
   winning_team
-
+binding.pry
 end
 
 
