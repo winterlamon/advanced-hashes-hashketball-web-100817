@@ -191,6 +191,11 @@ def scoreboard
   hometeam= ""
   awayteam= ""
     game_hash.collect do |location, team_info|
+      if location == :home 
+        hometeam = location.to_s.capitalize + " " + team_info[:team_name]
+      else
+        awayteam = location.to_s.capitalize + " " + team_info[:team_name]
+      end  
       team_info[:players].collect do |name, stats|
           if location == :home
             home_points << team_info[:players][name][:points]
@@ -198,10 +203,10 @@ def scoreboard
             away_points << team_info[:players][name][:points]
           end
 
-          team = location.to_s.capitalize + " " + team_info[:team_name]
-          puts team
         end
+        puts hometeam
         puts home_points.reduce(:+)
+        puts awayteam
         puts away_points.reduce(:+)
     end
 
