@@ -186,6 +186,7 @@ end
 
 
 def scoreboard
+  winning_team
 
 end
 
