@@ -197,10 +197,10 @@ def scoreboard
             away_points << team_info[:players][name][:points]
           end
 
+          team = location.to_s.capitalize + " " + team_info[:team_name]
+          puts team
         end
-        team = location.to_s.capitalize + " " + team_info[:team_name]
-          puts team  
-          puts home_points
+          puts home_points.reduce(:+)
     end
 
 #      points = points.reduce(:+)
